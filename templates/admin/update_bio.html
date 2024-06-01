@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Update Bio</title>
+  <!-- Include your CSS files here -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <h2>Update Bio</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  <a href="{% url 'view_bio' %}" class="btn btn-secondary mt-3">Cancel</a>
+</div>
+
+<!-- Include your JS files here -->
+</body>
+</html>
+1
